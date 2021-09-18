@@ -16,7 +16,16 @@
   // echo json_encode($busca);
 
   // carrega um usuário usando o login e a senha
-  $usuario = new Usuario();
-  $usuario->login("anderson", "123456");
+  // $usuario = new Usuario();
+  // $usuario->login("anderson", "123456");
+  // echo $usuario;
 
+  // insere novo usuário
+  // $aluno = new Usuario("anderson", "123456");
+  // $aluno->insert();
+  // echo $aluno;
+
+  $usuario = new Usuario();
+  $usuario->loadById(1);
+  $usuario->update("toor", "senhadoroot");
   echo $usuario;
