@@ -25,7 +25,14 @@
   // $aluno->insert();
   // echo $aluno;
 
+  // altera um usuário
+  // $usuario = new Usuario();
+  // $usuario->loadById(1);
+  // $usuario->update("toor", "senhadoroot");
+  // echo $usuario;
+
+  // deleta um usuário
   $usuario = new Usuario();
   $usuario->loadById(1);
-  $usuario->update("toor", "senhadoroot");
+  $usuario->delete();
   echo $usuario;

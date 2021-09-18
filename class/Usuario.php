@@ -99,13 +99,26 @@
     public function update($login, $senha){
       $this->setDesLogin($login);
       $this->setDesSenha($senha);
-      
+
       $sql = new Sql();
       $sql->execQuery("update tb_usuarios set deslogin = :login, dessenha = :senha where idusuario = :id", array(
         ":login" => $this->getDesLogin(),
         ":senha" => $this->getDesSenha(),
         ":id" => $this->getIdUsuario()
       ));
+    }
+
+    public function delete(){
+      $sql = new Sql();
+
+      $sql->execQuery("delete from tb_usuarios where idusuario = :id", array(
+        ":id" => $this->getIdUsuario()
+      ));
+
+      $this->setIdUsuario(0);
+      $this->setDesLogin("");
+      $this->setDesSenha("");
+      $this->setDtCadastro(new DateTime());
     }
 
     public function __construct($login = "", $senha = ""){
